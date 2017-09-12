@@ -29,4 +29,5 @@
 <li>Verify that if the game piece is not frozen then the call to freeze sets the frozen varable to true.</li>
 <li>Verify that if the game piece is frozen then the call to unfreeze sets the frozen varable to false.</l1>
 <li>Verify that if the game piece is not frozen then the call to move results in the new position.</l1>
-<li>Verify that if the game piece is frozen then the call to move does not change the position.</l1></ul>
+<li>Verify that if the game piece is frozen then the call to move does not change the position.</l1>
+<li>The grid of this game goes from (0, 0) to (100, 500)!</li></ul>

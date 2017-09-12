@@ -6,6 +6,10 @@ public class GamePiece {
     private boolean frozen;
     private String name;
     private String color;
+    private int minX;
+    private int maxX;
+    private int minY;
+    private int maxY;
 
     public GamePiece() {
         this.positionX = 0;
@@ -13,6 +17,10 @@ public class GamePiece {
         this.frozen = false;
         this.name = name;
         this.color = color;
+        this.minX = 0;
+        this.maxX = 100;
+        this.minY = 0;
+        this.maxY = 500;
     }
 
     public int getPositionX() {
@@ -23,8 +31,28 @@ public class GamePiece {
         return positionY;
     }
 
-    public boolean isFrozen() {
-        return frozen;
+    public int getMinX() {
+        return minX;
+    }
+
+    public int getMaxX() {
+        return maxX;
+    }
+
+    public int getMinY() {
+        return minY;
+    }
+
+    public int getMaxY() {
+        return maxY;
+    }
+
+    public String isFrozen() {
+        if (frozen) {
+            return "Yes";
+        } else {
+            return "No";
+        }
     }
 
     public String getName() {
@@ -44,12 +72,14 @@ public class GamePiece {
     }
 
     public String move(int newPositionX, int newPositionY) {
-        if (isFrozen()==true) {
-            return "Cannot change coordinates, the piece is frozen!";
+        if (frozen || newPositionX < getMinX() || newPositionX > getMaxX() || newPositionY < getMinY() || newPositionY > getMaxY()) {
+            return "Cannot change coordinates when frozen, and you must stay within the grid of the game!";
         }
-        positionX = newPositionX;
-        positionY = newPositionY;
-        return "Coordinates changed";
+        else {
+            positionX = newPositionX;
+            positionY = newPositionY;
+            return "Coordinates changed!";
+        }
     }
 
     public String freeze() {
