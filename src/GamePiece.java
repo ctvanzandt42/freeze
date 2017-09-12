@@ -1,3 +1,5 @@
+import java.util.Random;
+
 public class GamePiece {
     private int positionX;
     private int positionY;
@@ -83,7 +85,7 @@ public class GamePiece {
     }
 
     public String freeze() {
-        if (frozen == false){
+        if (frozen == false) {
             frozen = true;
             return "Freeze!";
         } else {
