@@ -73,32 +73,32 @@ public class GamePiece {
         this.color = color;
     }
 
-    public String move(int newPositionX, int newPositionY) {
+    public void move(int newPositionX, int newPositionY) {
         if (frozen || newPositionX < getMinX() || newPositionX > getMaxX() || newPositionY < getMinY() || newPositionY > getMaxY()) {
-            return "Cannot change coordinates when frozen, and you must stay within the grid of the game!";
+            System.out.println("Cannot change coordinates when frozen, and you must stay within the grid of the game!");
         }
         else {
             positionX = newPositionX;
             positionY = newPositionY;
-            return "Coordinates changed!";
+            System.out.println("Coordinates changed!");
         }
     }
 
-    public String freeze() {
+    public void freeze() {
         if (frozen == false) {
             frozen = true;
-            return "Freeze!";
+            System.out.println("Freeze!");
         } else {
-            return "Already frozen!";
+            System.out.println("Already frozen!");
         }
     }
 
-    public String unfreeze() {
+    public void unfreeze() {
         if (frozen == true){
             frozen = false;
-            return "It's melting!";
+            System.out.println("It's melting!");
         } else {
-            return "Already melted!";
+            System.out.println("Already melted!");
         }
     }
 
