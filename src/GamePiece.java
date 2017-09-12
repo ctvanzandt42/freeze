@@ -78,15 +78,15 @@ public class GamePiece {
             System.out.println("Cannot change coordinates when frozen, and you must stay within the grid of the game!");
         }
         else {
-            positionX = newPositionX;
-            positionY = newPositionY;
+            this.positionX = newPositionX;
+            this.positionY = newPositionY;
             System.out.println("Coordinates changed!");
         }
     }
 
     public void freeze() {
         if (frozen == false) {
-            frozen = true;
+            this.frozen = true;
             System.out.println("Freeze!");
         } else {
             System.out.println("Already frozen!");
@@ -95,7 +95,7 @@ public class GamePiece {
 
     public void unfreeze() {
         if (frozen == true){
-            frozen = false;
+            this.frozen = false;
             System.out.println("It's melting!");
         } else {
             System.out.println("Already melted!");
