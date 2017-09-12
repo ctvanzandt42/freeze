@@ -1,6 +1,8 @@
 public class GamePiece {
     private int positionX;
     private int positionY;
+    private int newPositionX;
+    private int newPositionY;
     private boolean frozen;
     private String name;
     private String color;
@@ -40,4 +42,33 @@ public class GamePiece {
     public void setColor(String color) {
         this.color = color;
     }
+
+    public String move(int newPositionX, int newPositionY) {
+        if (isFrozen()==true) {
+            return "Cannot change coordinates, the piece is frozen!";
+        }
+        positionX = newPositionX;
+        positionY = newPositionY;
+        return "Coordinates changed";
+    }
+
+    public String freeze() {
+        if (frozen == false){
+            frozen = true;
+            return "Freeze!";
+        } else {
+            return "Already frozen!";
+        }
+    }
+
+    public String unfreeze() {
+        if (frozen == true){
+            frozen = false;
+            return "It's melting!";
+        } else {
+            return "Already melted!";
+        }
+    }
+
+
 }

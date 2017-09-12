@@ -8,5 +8,9 @@ public class Main {
         System.out.println(test.getPositionY());
         test.setColor("Red");
         System.out.println(test.getColor());
+        System.out.println(test.freeze());
+        System.out.println(test.move(10, 200));
+        System.out.println(test.getPositionX());
+
     }
 }
