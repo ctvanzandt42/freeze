@@ -49,9 +49,9 @@ public class GamePiece {
 
     public String isFrozen() {
         if (frozen) {
-            return "Yes";
+            return "Piece is frozen!";
         } else {
-            return "No";
+            return "Piece is not frozen!";
         }
     }
 
@@ -83,7 +83,7 @@ public class GamePiece {
     }
 
     public void freeze() {
-        if (frozen == false) {
+        if (!frozen) {
             this.frozen = true;
             System.out.println("Freeze!");
         } else {
@@ -92,7 +92,7 @@ public class GamePiece {
     }
 
     public void unfreeze() {
-        if (frozen == true){
+        if (frozen){
             this.frozen = false;
             System.out.println("It's melting!");
         } else {
