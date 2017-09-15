@@ -51,7 +51,9 @@ public class Main {
         if (test.isFrozen()) {
             int previousX = test.getPositionX();
             int previousY = test.getPositionY();
-            test.move(30, 20);
+            int newPositionX = previousX + 1;
+            int newPositionY = previousY + 1;
+            test.move(newPositionX, newPositionY);
             if (previousX == test.getPositionX() && previousY == test.getPositionY()) {
                 System.out.println("Verified that move() method doesn't work when frozen!");
             } else {
