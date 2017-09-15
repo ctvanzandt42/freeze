@@ -47,6 +47,14 @@ public class GamePiece {
         return maxY;
     }
 
+    public int getNewPositionX() {
+        return newPositionX;
+    }
+
+    public int getNewPositionY() {
+        return newPositionY;
+    }
+
     public boolean isFrozen() {
         if (frozen) {
             return true;
@@ -73,32 +81,24 @@ public class GamePiece {
 
     public void move(int newPositionX, int newPositionY) {
         if (frozen || newPositionX < getMinX() || newPositionX > getMaxX() || newPositionY < getMinY() || newPositionY > getMaxY()) {
-            System.out.println("Cannot change coordinates when frozen, and you must stay within the grid of the game!");
         }
         else {
             this.positionX = newPositionX;
             this.positionY = newPositionY;
-            System.out.println("Coordinates changed!");
+            this.newPositionX = newPositionX;
+            this.newPositionY = newPositionY;
         }
     }
 
     public void freeze() {
         if (!frozen) {
             this.frozen = true;
-            System.out.println("Freeze!");
-        } else {
-            System.out.println("Already frozen!");
         }
     }
 
     public void unfreeze() {
         if (frozen){
             this.frozen = false;
-            System.out.println("It's melting!");
-        } else {
-            System.out.println("Already melted!");
         }
     }
-
-
 }
